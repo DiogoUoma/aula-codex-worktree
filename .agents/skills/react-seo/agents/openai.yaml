@@ -1,0 +1,6 @@
+interface:
+  display_name: "React SEO"
+  short_description: "SEO compatível com a versão e arquitetura React"
+  default_prompt: "Use $react-seo para analisar a versão do projeto e toda a codebase, implementar melhorias de SEO compatíveis e verificar o resultado."
+policy:
+  allow_implicit_invocation: false
