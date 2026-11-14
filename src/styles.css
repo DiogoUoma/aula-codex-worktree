@@ -163,6 +163,34 @@ p {
   gap: 12px;
   align-items: center;
 }
+.patient-access {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  font-size: 12px;
+  font-weight: 750;
+  color: var(--dark);
+  white-space: nowrap;
+}
+.patient-access:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media (max-width: 1100px) {
+  .patient-access {
+    min-width: 44px;
+  }
+  .patient-access span {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .header-actions .patient-access {
+    display: none;
+  }
+}
 .button {
   border: 0;
   min-height: 48px;

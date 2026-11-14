@@ -75,7 +75,8 @@ export function Terms({ onContact }: { onContact: () => void }) {
           <section id="dados-pessoais" aria-labelledby="dados-heading">
             <h2 id="dados-heading">Dados pessoais</h2>
             <p>
-              O site não possui formulário de cadastro nem solicita exames ou
+              Os formulários de login e cadastro são demonstrativos e não enviam
+              nem armazenam os dados preenchidos. O site não solicita exames ou
               informações de saúde. Se você iniciar uma conversa no WhatsApp, o
               número, o perfil e as informações que enviar serão utilizados para
               responder ao contato e tratar da solicitação de atendimento.
