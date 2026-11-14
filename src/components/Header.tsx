@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router";
 import { Brand, CTA } from "./ui";
 
 const links = [
@@ -55,9 +56,9 @@ export function Header({ onSchedule }: { onSchedule: () => void }) {
         <Brand />
         <nav className="desktop-nav" aria-label="Menu principal">
           {links.map((link) => (
-            <a key={link.href} href={link.href}>
+            <Link key={link.href} to={`/${link.href}`}>
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="header-actions">
@@ -82,9 +83,13 @@ export function Header({ onSchedule }: { onSchedule: () => void }) {
         hidden={!open}
       >
         {links.map((link) => (
-          <a onClick={() => setOpen(false)} key={link.href} href={link.href}>
+          <Link
+            onClick={() => setOpen(false)}
+            key={link.href}
+            to={`/${link.href}`}
+          >
             {link.label}
-          </a>
+          </Link>
         ))}
       </nav>
     </header>

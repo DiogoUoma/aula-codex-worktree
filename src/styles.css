@@ -95,6 +95,9 @@ p {
 .skip-link:focus {
   top: 12px;
 }
+#conteudo:focus {
+  outline: none;
+}
 .site-header {
   background: #fff;
   position: relative;
@@ -1783,6 +1786,120 @@ h1 > span {
 @media (max-width: 360px) {
   .header-actions > .button {
     display: none;
+  }
+}
+
+.legal-intro {
+  background: var(--soft);
+  padding-block: 42px 54px;
+}
+.legal-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--dark);
+  margin-bottom: 36px;
+}
+.legal-intro h1 {
+  color: var(--dark);
+  font-size: clamp(34px, 5vw, 60px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.12;
+}
+.legal-intro p {
+  max-width: 60ch;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.legal-updated {
+  display: block;
+  margin-top: 24px;
+  color: #4c5c55;
+  font-size: 12px;
+}
+.legal-layout {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 720px);
+  justify-content: space-between;
+  gap: 64px;
+  padding-block: 64px 88px;
+  align-items: start;
+}
+.legal-index {
+  position: sticky;
+  top: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  border-left: 3px solid var(--lime);
+  padding-left: 22px;
+  font-size: 13px;
+}
+.legal-index strong {
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.legal-index a {
+  color: #4c5c55;
+  line-height: 1.5;
+}
+.legal-index a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.legal-content section + section {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid #e5e9de;
+}
+.legal-content h2 {
+  font-size: clamp(24px, 2.5vw, 30px);
+  letter-spacing: -0.8px;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+.legal-content p {
+  font-size: 15px;
+  color: #4c5c55;
+}
+.legal-content p + p {
+  margin-top: 16px;
+}
+.legal-content p a {
+  color: var(--dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.legal-contact {
+  margin-block: 24px;
+}
+.legal-not-found {
+  padding-block: 80px;
+}
+@media (max-width: 800px) {
+  .legal-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-block: 36px 56px;
+  }
+  .legal-index {
+    position: static;
+  }
+  .legal-intro {
+    padding-block: 28px 36px;
+  }
+  .legal-intro p {
+    font-size: 14px;
+  }
+  .legal-back {
+    margin-bottom: 28px;
+  }
+  .legal-content p {
+    font-size: 14px;
   }
 }
 
