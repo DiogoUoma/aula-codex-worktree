@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, UserRound, X } from "lucide-react";
 import { Link } from "react-router";
 import { Brand, CTA } from "./ui";
 
@@ -62,6 +62,14 @@ export function Header({ onSchedule }: { onSchedule: () => void }) {
           ))}
         </nav>
         <div className="header-actions">
+          <Link
+            className="patient-access"
+            to="/login"
+            aria-label="Área do paciente"
+          >
+            <UserRound size={18} aria-hidden="true" />
+            <span>Área do paciente</span>
+          </Link>
           <CTA onClick={schedule} />
           <button
             ref={toggleRef}
@@ -82,6 +90,9 @@ export function Header({ onSchedule }: { onSchedule: () => void }) {
         aria-label="Menu principal mobile"
         hidden={!open}
       >
+        <Link onClick={() => setOpen(false)} to="/login">
+          Área do paciente
+        </Link>
         {links.map((link) => (
           <Link
             onClick={() => setOpen(false)}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MessageCircle } from "lucide-react";
-import { Route, Routes } from "react-router";
+import { Route, Routes, useLocation } from "react-router";
+import { Auth } from "./pages/Auth";
 import { Terms } from "./pages/Terms";
 import { RouteNavigation } from "./components/RouteNavigation";
 import { Header } from "./components/Header";
@@ -20,6 +21,8 @@ import {
 import { SchedulingDialog } from "./components/SchedulingDialog";
 
 export default function App() {
+  const { pathname } = useLocation();
+  const isAuthPage = /^\/(login|cadastro)\/?$/.test(pathname);
   const [scheduleOpen, setScheduleOpen] = useState(false);
   const openSchedule = () => setScheduleOpen(true);
   return (
@@ -28,8 +31,13 @@ export default function App() {
       <a className="skip-link" href="#conteudo">
         Pular para o conteúdo
       </a>
-      <Header onSchedule={openSchedule} />
+      {!isAuthPage && <Header onSchedule={openSchedule} />}
       <Routes>
+        <Route path="/login" element={<Auth key="login" mode="login" />} />
+        <Route
+          path="/cadastro"
+          element={<Auth key="cadastro" mode="cadastro" />}
+        />
         <Route
           path="/"
           element={
@@ -66,14 +74,16 @@ export default function App() {
           }
         />
       </Routes>
-      <Footer onSchedule={openSchedule} />
-      <button
-        className="floating-contact"
-        aria-label="Agendar consulta e conversar com a Mari"
-        onClick={openSchedule}
-      >
-        <MessageCircle size={24} />
-      </button>
+      {!isAuthPage && <Footer onSchedule={openSchedule} />}
+      {!isAuthPage && (
+        <button
+          className="floating-contact"
+          aria-label="Agendar consulta e conversar com a Mari"
+          onClick={openSchedule}
+        >
+          <MessageCircle size={24} />
+        </button>
+      )}
       <SchedulingDialog
         open={scheduleOpen}
         onClose={() => setScheduleOpen(false)}
