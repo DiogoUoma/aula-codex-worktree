@@ -1,12 +1,13 @@
 import type { ReactNode } from "react";
+import { Link } from "react-router";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight, Leaf } from "lucide-react";
 
 export function Brand({ inverse = false }: { inverse?: boolean }) {
   return (
-    <a
+    <Link
       className={`brand ${inverse ? "brand-inverse" : ""}`}
-      href="#inicio"
+      to="/#inicio"
       aria-label="Mari Nutricionista, início"
     >
       <span className="brand-symbol">
@@ -18,7 +19,7 @@ export function Brand({ inverse = false }: { inverse?: boolean }) {
         </strong>
         <small>nutricionista</small>
       </span>
-    </a>
+    </Link>
   );
 }
 

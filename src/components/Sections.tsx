@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowUpRight,
@@ -416,9 +417,10 @@ export function Footer({ onSchedule }: { onSchedule: () => void }) {
         <div className="footer-bottom">
           <Brand inverse />
           <p>Nutrição com ciência, escuta e vida real.</p>
-          <a href="#duvidas">
+          <Link to="/#duvidas">
             Dúvidas frequentes <ArrowUpRight size={14} />
-          </a>
+          </Link>
+          <Link to="/termos">Termos e privacidade</Link>
           <span>© {new Date().getFullYear()} Mari Nutricionista</span>
         </div>
       </div>
